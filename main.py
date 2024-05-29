@@ -5,6 +5,8 @@ import google.generativeai as genai
 from rich import print
 from rich.prompt import Prompt
 from rich.table import Table
+from rich.markdown import Markdown
+
 
 # ~~~~~ LOAD ENVIRONMENT VARIABLES ~~~~~ #
 from dotenv import load_dotenv
@@ -38,8 +40,10 @@ def main():
     response = model.generate_content(
       content
     )
+    
+    response = Markdown(response.text)
 
-    print(f"[bold aquamarine1]> [/bold aquamarine1] [aquamarine1]{response.text}[/aquamarine1]")
+    print(f"\n[bold aquamarine1]<Quantum> [/bold aquamarine1]", response )
   
 def __prompt() -> str:
   prompt = Prompt.ask("\n[bold thistle1]¿Qué quieres consultarle a Quantum? [/bold thistle1]")
