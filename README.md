@@ -1,5 +1,7 @@
 # Quantum AI Assistant
 
+_Choose Life_
+
 ![](./img/example.png)
 
 ## Descripción
